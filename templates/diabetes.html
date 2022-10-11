@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" href="../static/img/health.ico">
+    <!-- Bootstrap CSS -->
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+   *{
+    margin:0;
+    padding:0;
+    font-family: 'Josefin Sans', sans-serif;
+    }
+    html,
+    body,
+    #intro {
+    height: 100%;
+    }
+    img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    }
+	* {
+    box-sizing: border-box;
+    font-family: Roboto;
+}
+
+
+button {
+    width: 150px;
+    height: 40px;
+    transition: 0.25s;
+    border-radius: 4px;
+    margin: 10px;
+    font-size: 16px;
+    font-family: Roboto;
+    cursor: pointer;
+}
+.fill {
+    border: 2px solid #4a6eff;
+    background: none;
+    color: #4a6eff;
+}
+.fill:hover,
+.fill:focus {
+    box-shadow: inset 0px 0px 0 20px #4a6eff;
+    color: white;
+}
+label {
+  font-weight:bold;
+}
+
+    </style>
+    <title>Diabetes Prediction</title>
+  </head>
+  <body>
+    
+      <div id="intro" class="container-fluid view ">
+        <h1 class="text-center text-capitalize pt-5">Know your chances of getting Diabetes in one<a href=""> Click!</a></h1>
+        <hr class="w-75 mx-auto pt-5">
+        <div class="row mb-5">
+          <div class="col-lg-6 col-md-6 col-12 my-auto">
+            <img src="../static/img/diabetes.jpg" class="float-left">
+
+          </div>
+          <div class="col-lg-6 col-md-6 col-12">
+            <form action="{{ url_for('predict')}}" method="post">
+              <div class="form-group">
+               
+                <label>No. of Pregnencies</label>
+                <input class="form-control" type="text" id="preg" name="preg" required="required" placeholder="No. of Pregnencies">
+              </div>
+              <div class="form-group">
+                <label>Glucose Level</label>
+                <input class="form-control" type="text" id="gl" name="gl"  required="required" placeholder="Glucose Level">
+              </div>
+              <div class="form-group">
+                <label>Current Blood Pressure</label>
+                <input class="form-control" type="text" id="cbp" name="cbp"  required="required" placeholder="Current Blood Pressure">
+              </div>
+			  <div class="form-group">
+                <label>Skin Thickness</label>
+                <input class="form-control" type="text" id="sT" name="sT" required="required" placeholder="skin thickness">
+              </div>
+			  <div class="form-group">
+                <label>Insulin</label>
+                <input class="form-control" type="text" id="ins" name="ins" required="required" placeholder="insulin">
+              </div>
+			  <div class="form-group">
+                <label>Body Mass Index</label>
+                <input class="form-control" type="text" id="bmi" name="bmi" required="required" placeholder="Body Mass Index">
+              </div>
+			  <div class="form-group">
+                <label>Diabetes Pedigree Function</label>
+                <input class="form-control" type="text" id="dpf" name="dbf" required="required" placeholder="DiabetesPedigreeFunction">
+              </div>
+              <div class="form-group">
+                <label>Age</label>
+                <input class="form-control" type="text" id="age" name="age" required="required" placeholder="Age">
+              </div> 
+             <a href="/"> <button class="fill" >Home</button> </a>
+			  <button type="submit" class="fill">Predict</button>
+            </form>
+          </div>
+        </div>
+      </div>
+      <!--/.Mask-->
+ 
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    <!-- Optional JavaScript -->
+    
+  </body>
+</html>
